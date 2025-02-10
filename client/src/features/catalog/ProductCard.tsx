@@ -4,6 +4,7 @@ import {
   CardActions,
   CardContent,
   CardMedia,
+  Link,
   Typography,
 } from "@mui/material";
 import { Product } from "../../app/models/product";
@@ -42,7 +43,9 @@ export default function ProductCard({ product }: Props) {
       </CardContent>
       <CardActions sx={{ justifyContent: "space-between" }}>
         <Button>Add to cart</Button>
-        <Button>View</Button>
+        <Button component={Link} href={`/catalog/${product.id}`}>
+          View
+        </Button>
       </CardActions>
     </Card>
   );
